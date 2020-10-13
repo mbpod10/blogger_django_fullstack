@@ -27,7 +27,7 @@ SECRET_KEY = 't!45wo38_a%*b!3ms@wwf$a77v4dcr4l2d1vd06w2#-xhkkwjw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['mbpod10.pythonanywhere.com', '127.0.0.1:8000']
 
 
 # Application definition
