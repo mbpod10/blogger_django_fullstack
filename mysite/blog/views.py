@@ -3,7 +3,7 @@ from django.views.generic import (
     TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 from django.urls import reverse_lazy
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -54,7 +54,7 @@ class DraftListView(LoginRequiredMixin, ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
+        return Post.objects.filter(published_date__isnull=True).order_by('create_date')
 
 # COMMENTS
 
@@ -62,7 +62,7 @@ class DraftListView(LoginRequiredMixin, ListView):
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.publish
+    post.publish()
     return redirect('post_detail', pk=pk)
 
 

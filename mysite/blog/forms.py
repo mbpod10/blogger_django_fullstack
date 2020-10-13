@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
     # fields and classes correspond to the css classes
     widgets = {
         'title': forms.TextInput(attrs={'class': 'textinputclass'}),
-        'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postconent'})
+        'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'})
     }
 
 
